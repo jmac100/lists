@@ -1,0 +1,23 @@
+.splash
+    background-image: url(../assets/images/splash2.png)      
+    background-size: contain
+    background-position: center
+    background-repeat: no-repeat
+    height: 50vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    .button
+        font-size: 2rem
+        text-decoration: none
+        color: $link-color
+        border: $link-color 1px solid
+        padding: 10px 20px
+        border-radius: 10px
+        background: rgba(0,0,0,0.6)
+        &:hover
+            background: rgba(0,0,0,0.7)
+            color: darken($link-color, 10)
+            cursor: pointer

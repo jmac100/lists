@@ -1,0 +1,14 @@
+<div class="container fade-in">
+  <header *ngIf="location" class="fade-in">
+    <h1>{{ location }}</h1>
+  </header>
+  <ul class="list" *ngIf="items" [sortablejs]="items" [sortablejsOptions]="options">
+    <li id="sortable-items" class="list-item fade-in" *ngFor="let item of items">
+      <span>{{ item }}</span>
+      <i class="fa fa-arrows my-handle"></i>
+    </li>
+  </ul>
+  <div class="trash mb-sm">
+    <a routerLink="/lists/{{id}}"><i class="fa fa-arrow-left" aria-hidden="true" title="Back to {{ location }}"></i></a>
+  </div>
+</div>

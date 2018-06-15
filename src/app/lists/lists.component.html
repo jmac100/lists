@@ -1,0 +1,17 @@
+<header class="fade-in">
+  <h1>My Lists</h1>
+</header>
+<ul class="list" *ngIf="locations">
+  <li class="list-item list-item-container fade-in" *ngFor="let location of locations">
+    <a routerLink="/lists/{{location.id}}">
+      <div class="list-item-description">{{ location.name }}</div>
+    </a>
+    <i class="fa fa-trash-o fa-trash-o-sm" aria-hidden="true" (click)="removeList(location.id)" title="Remove {{location.name}}"></i>
+  </li>
+</ul>
+<footer>
+  <input type="text" placeholder="Add list..." [(ngModel)]="newLocation" (keyup.enter)="addList()">
+  <button class="btn" (click)="addList()">
+    <i class="fa fa-plus-circle"></i>
+  </button>
+</footer>

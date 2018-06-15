@@ -1,0 +1,51 @@
+.list
+    list-style-type: none
+    margin: 0 1em
+
+.list-item
+    display: flex
+    align-content: center
+    justify-content: center
+    background: $dark
+    color: $link-color
+    padding: 1em
+    text-align: center
+    cursor: pointer
+    border: 1px solid darken($dark, 10)
+    border-radius: 5px
+    height: 1em
+    &:hover
+        background: darken($dark, 10)
+    &:last-child
+        margin-bottom: 1em
+
+.disabled-list-item
+    background: $med    
+    padding: 1em
+    color: $disabled-text
+    text-decoration: line-through
+    text-align: center  
+    cursor: pointer
+    border: 1px solid darken($med, 10)
+    border-radius: 5px
+    &:hover
+        background: darken($med, 10)
+    
+
+@media(min-width: 460px)
+    .list
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 1em
+
+@media(min-width: 768px)
+    .list
+        grid-template-columns: repeat(3, 1fr)
+
+@media(min-width: 1060px)
+    .list
+        grid-template-columns: repeat(4, 1fr)
+
+@media(min-width: 1700px)
+    .list
+        grid-template-columns: repeat(5, 1fr)

@@ -1,0 +1,51 @@
+footer
+    background: #ffffff
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+    display: flex
+
+    input
+        width: 100%
+        font-size: 1.1em
+        border: none
+        border-top: 2px solid $dark
+
+    button
+        width: 10%
+        color: #fff
+        background: $med
+        &:hover
+            background: darken($med, 10)    
+
+.fa-plus-circle
+    font-size: 1.7em
+
+.auto-complete-footer
+    background: #ccc
+    position: fixed
+    bottom: 0
+    left: 0
+    width: 100%
+
+.footer-flex-container
+    display: grid
+    width: 100%
+    grid-template-columns: 10fr 1fr 1fr
+    grid-template-rows: 2fr
+    
+.upload
+    grid-row: 1
+    grid-column: 1/12
+    height: 50vh
+    transition: height 0.5s ease-out
+
+textarea
+    width: 100%
+    height: 100%
+    font-size: 1.3em
+    border-top: 2px solid #111
+
+.closed
+    height: 0

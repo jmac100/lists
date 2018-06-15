@@ -1,0 +1,33 @@
+<header *ngIf="location" class="container fade-in">
+  <h1>{{ location }}</h1>
+</header>
+<div id="full-cart" class="fade-in" *ngIf="items.length == 0 && disabledItems.length > 0">Your cart is full.</div>
+<div id="empty-list" class="fade-in" *ngIf="items.length == 0 && disabledItems.length == 0">The list is empty.</div>
+<ul class="list" *ngIf="items">
+  <li class="list-item fade-in" *ngFor="let item of items" (click)="addToCart(item)">
+    {{ item }}
+  </li>
+</ul>
+<div class="trash mb-sm">
+  <a routerLink="/lists"><i class="fa fa-arrow-left" aria-hidden="true" title="Back to Lists"></i></a>
+  <i class="fa" [class.fa-lock]="isLocked" [class.fa-unlock-alt]="!isLocked" aria-hidden="true" (click)="toggleLock()"></i>
+  <i class="fa fa-cart-plus" *ngIf="items.length" aria-hidden="true" (click)="fillCart()" title="Add Everything to Cart"></i>
+  <a *ngIf="items.length" routerLink="/sort/{{id}}"><i class="fa fa-sort" aria-hidden="true" title="Sort List"></i></a>
+  <a routerLink="/add/{{id}}"><i class="fa fa-list" title="Add From Master List"></i></a>
+</div>
+<header>
+  <h1>In Your Cart</h1>
+</header>
+<div id="empty-cart" *ngIf="disabledItems.length == 0 && items.length > 0">Your cart is empty.</div>
+<ul class="list" *ngIf="disabledItems">  
+  <li class="disabled-list-item fade-in" *ngFor="let disabledItem of disabledItems" (click)="removeFromCart(disabledItem)">
+    {{ disabledItem }}
+  </li>
+</ul>
+<div class="trash mb-lg" *ngIf="disabledItems.length">
+  <i class="fa fa-trash-o" aria-hidden="true" (click)="emptyTrash()" title="Permanently Remove All Items in Your Cart"></i>
+  <i class="fa fa-cart-arrow-down" aria-hidden="true" (click)="emptyCart()" title="Take All Items Out of Your Cart"></i>
+</div>
+<div class="auto-complete-footer">
+  <auto-complete (onAddButtonClicked)="addButtonClicked($event)" (onEnterPressed)="enterPressed($event)"></auto-complete>
+</div>

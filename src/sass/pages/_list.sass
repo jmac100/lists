@@ -1,0 +1,43 @@
+#empty-cart
+    +centered-text
+    margin-bottom: 5em
+    color: $link-color
+
+#full-cart
+    +centered-text
+    margin-bottom: 5em
+    color: $link-color
+
+#empty-list
+    +centered-text
+    margin-bottom: 1em
+    color: $link-color
+
+.list-item-container
+    display: grid
+    grid-template-columns: 3fr 1fr
+    grid-template-areas: "list-item trash"
+
+.list-item-description
+    grid-area: list-item
+    justify-self: center
+    margin-top: .5em
+
+.fa-trash-o, .fa-sort, .fa-arrow-left, .fa-cart-plus, .fa-cart-arrow-down, .fa-unlock-alt, .fa-lock, .fa-list
+    font-size: 1.5em
+    grid-area: trash
+    justify-self: end
+
+.fa-sort, .fa-cart-plus, .fa-cart-arrow-down, .fa-unlock-alt, .fa-lock, .fa-list
+    margin-left: 1em
+
+.fa-unlock-alt, .fa-lock
+    padding-left: .55em
+    padding-right: .55em
+
+.fa-sort
+    padding-left: .65em
+    padding-right: .65em
+
+.mb-lg
+    margin-bottom: 5em

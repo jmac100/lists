@@ -1,0 +1,12 @@
+<div class="burger-container">
+  <div id="burger" class="burger" (click)="toggleMenu()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+</div>
+<nav [style.height]="!menuOpen ? '0px' : (auth.isAuthenticated() ? '147px' : '49px')">
+  <div class="brand">Shopping List</div>
+  <ul class="menu">
+      <li *ngIf="auth.isAuthenticated()"><a routerLink="/lists">Lists</a></li>
+      <li *ngIf="auth.isAuthenticated()"><a routerLink="/master-list">Master List</a></li>
+      <li *ngIf="auth.isAuthenticated()"><a class="btn btn-auth" (click)="logout()">Logout</a></li>
+      <li *ngIf="!auth.isAuthenticated()"><a class="btn btn-auth" (click)="login()">Login</a></li>
+  </ul>
+</nav>

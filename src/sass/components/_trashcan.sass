@@ -1,0 +1,28 @@
+.trash
+    margin-top: 2em
+    display: flex
+    justify-content: center
+.fa-trash-o, .fa-sort, .fa-arrow-left, .fa-cart-plus, .fa-cart-arrow-down, .fa-unlock-alt, .fa-lock, .fa-list
+    border: 1px solid $med
+    padding: .5em
+    border-radius: 25px
+    cursor: pointer
+    color: $link-color
+    &:hover
+        background: darken($med, 10)
+.fa-trash-o-sm
+    font-size: 1em !important
+
+#sortable-items
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    white-space: nowrap
+
+#sortable-items span
+    justify-self: center
+    grid-column-start: 2
+    grid-column-end: 3
+
+#sortable-items i
+    justify-self: end
+    font-size: 1.2em

@@ -1,0 +1,20 @@
+<div class="footer-flex-container">
+  <input 
+  #newItem 
+  placeholder="Add item..." 
+  auto-complete 
+  [(ngModel)]="data" 
+  [source]="items"
+  (keyup.enter)="enterPressed(newItem)"
+  match-formatted="true"
+  min-chars="2">
+  <div class="upload" [class.closed]="!uploadOpen">
+    <textarea #uploadContent cols="30" rows="10" [(ngModel)]="uploadItems"></textarea>
+  </div>
+  <button class="btn" (click)="addButtonClicked(newItem, uploadContent)">
+    <i class="fa fa-plus-circle"></i>
+  </button>
+  <button class="btn">
+    <i class="fa" [class.fa-caret-up]="!uploadOpen" [class.fa-caret-down]="uploadOpen" (click)="toggleUpload()"></i>
+  </button>
+</div>
