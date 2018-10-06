@@ -18,6 +18,7 @@ export class AutoCompleteComponent implements OnInit {
   @Output() onBlur = new EventEmitter<any>()
   @Output() onAddButtonClicked = new EventEmitter<any>()
   @Output() onEnterPressed = new EventEmitter<any>()
+  @Output() onDownloadToClipboard = new EventEmitter<any>()
 
   constructor(private fb: FirebaseService) { }
 
@@ -73,5 +74,9 @@ export class AutoCompleteComponent implements OnInit {
 
   toggleUpload() {
     this.uploadOpen = !this.uploadOpen
+  }
+
+  downloadToClipboard() {
+    this.onDownloadToClipboard.emit()
   }
 }

@@ -86,6 +86,23 @@ export class ListComponent implements OnInit {
     }
   }
 
+  downloadToClipboard() {
+    let selBox = document.createElement('textarea');
+
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = this.items.join('\r\n')
+
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+  }
+
   addToCart(item) {
     if (this.isLocked) return
     this.items = this.items.filter(element => element !== item)

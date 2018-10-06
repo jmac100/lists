@@ -29,5 +29,9 @@
   <i class="fa fa-cart-arrow-down" aria-hidden="true" (click)="emptyCart()" title="Take All Items Out of Your Cart"></i>
 </div>
 <div class="auto-complete-footer">
-  <auto-complete (onAddButtonClicked)="addButtonClicked($event)" (onEnterPressed)="enterPressed($event)"></auto-complete>
+  <auto-complete 
+    (onAddButtonClicked)="addButtonClicked($event)" 
+    (onEnterPressed)="enterPressed($event)"
+    (onDownloadToClipboard)="downloadToClipboard()">
+  </auto-complete>
 </div>

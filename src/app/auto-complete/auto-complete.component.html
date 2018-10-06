@@ -17,4 +17,7 @@
   <button class="btn">
     <i class="fa" [class.fa-caret-up]="!uploadOpen" [class.fa-caret-down]="uploadOpen" (click)="toggleUpload()"></i>
   </button>
+  <button class="btn">
+    <i class="fa fa-download" (click)="downloadToClipboard()"></i>
+  </button>
 </div>
