@@ -2,11 +2,13 @@
   <header class="fade-in">
     <h1>Add Items to {{ location }}</h1>
   </header>
-  <ul class="list" *ngIf="items">
-    <li class="list-item fade-in" *ngFor="let item of masterItems, let i = index" (click)="toggleSelected($event)">
-      <span>{{ item }}</span>
-    </li>
-  </ul>
+  <header>
+    <ul class="list" *ngIf="items">
+      <li class="list-item fade-in" *ngFor="let item of masterItems, let i = index" (click)="toggleSelected($event)">
+        <span>{{ item }}</span>
+      </li>
+    </ul>
+  </header>
   <div class="trash mb-sm">
     <a routerLink="/lists/{{id}}"><i class="fa fa-arrow-left" aria-hidden="true" title="Back to List"></i></a>
     <i class="fa fa-cart-plus" *ngIf="selectedItems.length" aria-hidden="true" (click)="addToList()" title="Add to List"></i>

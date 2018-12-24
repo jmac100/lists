@@ -2,10 +2,12 @@
   <header class="fade-in">
     <h1>Master List</h1>
   </header>
-  <ul class="list" *ngIf="items">
-    <li id="sortable-items" class="list-item fade-in" *ngFor="let item of items" (click)="removeItem(item)">
-      <span>{{ item }}</span>
-      <i class="fa fa-trash"></i>
-    </li>
-  </ul>
+  <header>
+    <ul class="list" *ngIf="items">
+      <li id="sortable-items" class="list-item fade-in" *ngFor="let item of items" (click)="removeItem(item)">
+        <span>{{ item }}</span>
+        <i class="fa fa-trash"></i>
+      </li>
+    </ul>
+  </header>
 </div>

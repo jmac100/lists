@@ -1,6 +1,7 @@
 .list
     list-style-type: none
     margin: 0 1em
+    width: 100%
 
 .list-item
     display: flex
@@ -34,18 +35,16 @@
 
 @media(min-width: 460px)
     .list
-        display: grid
-        grid-template-columns: repeat(2, 1fr)
-        grid-gap: 1em
+        width: 75%
 
 @media(min-width: 768px)
     .list
-        grid-template-columns: repeat(3, 1fr)
+        width: 40%
 
 @media(min-width: 1060px)
     .list
-        grid-template-columns: repeat(4, 1fr)
+        width: 25%
 
 @media(min-width: 1700px)
     .list
-        grid-template-columns: repeat(5, 1fr)
+        width: 20%

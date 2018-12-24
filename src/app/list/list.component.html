@@ -3,11 +3,13 @@
 </header>
 <div id="full-cart" class="fade-in" *ngIf="items.length == 0 && disabledItems.length > 0">Your cart is full.</div>
 <div id="empty-list" class="fade-in" *ngIf="items.length == 0 && disabledItems.length == 0">The list is empty.</div>
-<ul class="list" *ngIf="items">
-  <li class="list-item fade-in" *ngFor="let item of items" (click)="addToCart(item)">
-    {{ item }}
-  </li>
-</ul>
+<header>
+  <ul class="list" *ngIf="items">
+    <li class="list-item fade-in" *ngFor="let item of items" (click)="addToCart(item)">
+      {{ item }}
+    </li>
+  </ul>
+</header>
 <div class="trash mb-sm">
   <a routerLink="/lists"><i class="fa fa-arrow-left" aria-hidden="true" title="Back to Lists"></i></a>
   <i class="fa" [class.fa-lock]="isLocked" [class.fa-unlock-alt]="!isLocked" aria-hidden="true" (click)="toggleLock()"></i>
@@ -19,11 +21,13 @@
   <h1>In Your Cart</h1>
 </header>
 <div id="empty-cart" *ngIf="disabledItems.length == 0 && items.length > 0">Your cart is empty.</div>
-<ul class="list" *ngIf="disabledItems">  
-  <li class="disabled-list-item fade-in" *ngFor="let disabledItem of disabledItems" (click)="removeFromCart(disabledItem)">
-    {{ disabledItem }}
-  </li>
-</ul>
+<header>
+  <ul class="list" *ngIf="disabledItems">
+    <li class="disabled-list-item fade-in" *ngFor="let disabledItem of disabledItems" (click)="removeFromCart(disabledItem)">
+      {{ disabledItem }}
+    </li>
+  </ul>
+</header>
 <div class="trash mb-lg" *ngIf="disabledItems.length">
   <i class="fa fa-trash-o" aria-hidden="true" (click)="emptyTrash()" title="Permanently Remove All Items in Your Cart"></i>
   <i class="fa fa-cart-arrow-down" aria-hidden="true" (click)="emptyCart()" title="Take All Items Out of Your Cart"></i>
